@@ -37,7 +37,7 @@ PicPayChallenge/
 - **Models**: Entidades que representam os dados (User, Transaction)
 - **DbContext**: Configuração do Entity Framework e relacionamentos
 
-## 📊 Modelo de Dados
+## Modelo de Dados
 
 ### User (Usuário)
 - `Id`: Identificador único
@@ -68,7 +68,7 @@ PicPayChallenge/
 7. **Notificações**: Envio de notificação via serviço externo (assíncrono)
 8. **API RESTful**: Endpoints seguindo padrões REST
 
-### 🔗 Endpoints da API
+###  Endpoints da API
 
 #### Usuários
 - `POST /api/users` - Criar novo usuário
