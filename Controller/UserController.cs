@@ -4,6 +4,7 @@ using PicPayClone.Data;
 using PicPayClone.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using BCrypt.Net;
 
 namespace PicPayClone.Controllers
 {
@@ -29,6 +30,13 @@ namespace PicPayClone.Controllers
         {
             if (user == null)
                 return BadRequest();
+            var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.CPF == user.CPF || u.Email == user.Email);
+
+            if (existingUser != null)
+            {
+                return StatusCode(409, "CPF ou Email já Registrado.");
+            }
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();

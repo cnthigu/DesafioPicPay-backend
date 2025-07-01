@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using PicPayClone.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpClient();
 
 
 builder.Services.AddControllers();
