@@ -1,6 +1,6 @@
 # PicPay Challenge - Sistema de Transferências Simplificado
 
-Este projeto é uma implementação do [Desafio Técnico Backend do PicPay](https://github.com/PicPay/picpay-desafio-backend) utilizando **ASP.NET Core 8.0**, **C#**, **Entity Framework Core** e **SQLite**.
+Este projeto é uma implementação do [Desafio Técnico Backend do PicPay](https://github.com/PicPay/picpay-desafio-backend) utilizando **ASP.NET Core 8.0**, **C#**, **Entity Framework Core** e **SQLServer**.
 
 ## Sobre o Projeto
 
@@ -14,7 +14,7 @@ O PicPay Simplificado é uma plataforma de pagamentos onde é possível deposita
 - **ASP.NET Core 8.0** - Framework web para APIs REST
 - **C# 11** - Linguagem de programação
 - **Entity Framework Core** - ORM para acesso ao banco de dados
-- **SQLite** - Banco de dados (fácil para desenvolvimento e testes)
+- **SQLServer** - (fácil para desenvolvimento e testes)
 - **Swagger/OpenAPI** - Documentação automática da API
 - **HttpClient** - Para integração com serviços externos
 
