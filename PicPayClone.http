@@ -1,0 +1,6 @@
+@PicPayClone_HostAddress = http://localhost:5171
+
+GET {{PicPayClone_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
