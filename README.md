@@ -101,6 +101,7 @@ O projeto segue os princípios da Clean Architecture, promovendo a separação d
 #### Transações
 
 *   `POST /api/transactions/transfer` - Realizar uma transferência entre usuários
+*   `GET /api/transactions` - Historico de todas transferência entre usuários
 
 ## Como Executar
 
@@ -193,3 +194,11 @@ Este projeto foi desenvolvido como parte de um estudo de caso para demonstrar co
 API RESTful em ASP.NET Core para fins educacionais, simulando transações financeiras entre usuários — inspirado no desafio do PicPay.
 
 *   [C# 100.0%]()
+
+## Demonstração
+
+### Criando usuário via Swagger
+![Demo - Criar Usuário](docs/demo-user.gif)
+
+### Realizando transferência entre usuários
+![Demo - Transferência](docs/demo-transfer.gif)
