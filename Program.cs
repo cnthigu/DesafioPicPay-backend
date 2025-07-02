@@ -1,10 +1,24 @@
+using DesafioPicPayBackEnd.Services;
+using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using PicPayClone.Data;
+using PicPayClone.Models;
+using PicPayClone.Services;
+using PicPayClone.Services.External;
+using PicPayClone.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient();
 
+builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<IAuthorizationService, AuthorizationService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+
+builder.Services.AddScoped<IValidator<CreateTransactionDTO>, CreateTransactionDTOValidator>();
+
+builder.Services.AddHttpClient<IAuthorizationService, AuthorizationService>();
+builder.Services.AddHttpClient<INotificationService, NotificationService>();
 
 builder.Services.AddControllers();
 
