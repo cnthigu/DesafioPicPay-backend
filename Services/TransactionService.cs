@@ -1,4 +1,4 @@
-﻿using DesafioPicPayBackEnd.Models;
+﻿    using DesafioPicPayBackEnd.Models;
 using DesafioPicPayBackEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
@@ -82,6 +82,14 @@ namespace PicPayClone.Services
                 _logger.LogError(ex, "Erro inesperado ao processar transação");
                 return TransactionResult.Failure("Ocorreu um erro ao processar a transação. O dinheiro foi devolvido.", 500);
             }
+        }
+
+        public async Task<IEnumerable<Transaction>> GetAllTransactionsAsync()
+        {
+            return await _context.Transactions
+                .Include(t => t.Payer)
+                .Include(t => t.Payee)
+                .ToListAsync();
         }
 
         private async Task<(UserModel payer, UserModel payee)> GetUsersAsync(int payerId, int payeeId)

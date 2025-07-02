@@ -43,5 +43,12 @@ namespace PicPayClone.Controllers
 
             return StatusCode(result.StatusCode, new { message = result.Message });
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var transactions = await _transactionService.GetAllTransactionsAsync();
+            return Ok(transactions);
+        }
     }
 }
